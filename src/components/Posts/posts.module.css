@@ -1,0 +1,56 @@
+/* CSS to apply When Screen size is less than 996 px*/
+@media screen and (max-width: 768px) {
+    .blogList {
+        padding: 8px;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-decoration: none;
+    }
+
+    .filterContainer {
+        display: flex;
+        align-items: center;
+        margin: auto;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .blogList {
+        padding: 20px;
+        max-width: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-decoration: none;
+    }
+
+    .filterContainer {
+        display: flex;
+        align-items: center;
+        margin: auto;
+        width: 60%;
+        padding: 20px;
+    }
+}
+
+.tagsContainer {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tag {
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* $font: 'Poppins', sans-serif; */
