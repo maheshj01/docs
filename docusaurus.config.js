@@ -10,6 +10,16 @@ const config = {
   // tagline: 'Under Construction',
   favicon: 'img/favicon.ico',
   customFields: {
+    allPosts: [
+      {
+        slug: "google-hiring-challenge-2",
+        title: "Demystifying Google's Secret Hiring Challenge-II",
+        authors: "Mahesh",
+        featured: false,
+        created_at: "2023-11-01",
+        tags: ['programming', 'hiring', 'medium']
+      },
+    ]
   },
   // Set the production url of your site here
   url: 'https://docs.maheshjamdade.com',
