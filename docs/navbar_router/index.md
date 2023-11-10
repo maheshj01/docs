@@ -21,7 +21,7 @@ NavbarRouter is a complete package to handle all your BottomNavigationBar needs.
 - Jump to base route from a deep nested route with a single tap(same as instagram).
 - Adapatable to different device Sizes.
 
-**For more detailed explanation see [features section](/features)**
+**For more detailed explanation see [features section](./features)**
 
 > This package can effortlessly trim down your codebase by a remarkable 50% and expedite the implementation of the aforementioned features by half the time.
 > Heres the same [sample app](https://gist.github.com/maheshmnj/894922ccb67f5fdc4ffb652e41916fa2) without the package which requires around 800 lines of code.
