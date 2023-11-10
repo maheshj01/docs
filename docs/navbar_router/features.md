@@ -65,7 +65,7 @@ NavbarRouter supports 3 different types of Navbars as of today and intends to ad
 
 ![Floating Navbar](./assets/navbar-type4.gif)
 
-See [Types of Navbar](/types) for more details.
+See [Types of Navbar](./types) for more details.
 
 ### Pop to Base route (Similar to Instagram)
 
