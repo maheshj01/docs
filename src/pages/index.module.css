@@ -1,0 +1,64 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+@media screen and (min-width: 768px) {
+  .heroBanner {
+    padding: 1.01rem;
+    text-align: center;
+    position: relative;
+    margin: 8rem auto;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heroBanner {
+    padding: 1.01rem;
+    text-align: center;
+    position: relative;
+    margin: 8rem auto;
+    width: 100%;
+  }
+}
+
+body {
+  font-family: 'Poppins', 'sans-serif';
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  letter-spacing: 10px;
+  justify-content: center;
+}
+
+.buttonmg {
+  margin: 1 1rem;
+  padding: 1rem 2rem;
+}
+
+.footer {
+  padding: 2rem 0;
+  height: 10rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #eaeaea;
+}
+
+.content {
+  text-align: center;
+  height: 50rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient {
+  text-transform: uppercase;
+  background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Poppins', 'sans-serif';
+}
