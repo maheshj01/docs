@@ -14,13 +14,13 @@ function HomepageHeader() {
       <div className="container">
         <h1 className="hero__title">Docs</h1>
         <p className="hero__subtitle">Under Construction</p>
+        {/* 
         <div className={styles.buttons}>
           <a
             className="button button--secondary button--lg"
             href="./docs/navbar_router">
             Navbar Router
           </a>
-          {/* space */}
           <div style={{ width: '10px', height: '10px' }}></div>
           <a
             className="button button--secondary button--lg"
@@ -28,6 +28,7 @@ function HomepageHeader() {
             Twitter
           </a>
         </div>
+         */}
       </div>
     </header>
   );
