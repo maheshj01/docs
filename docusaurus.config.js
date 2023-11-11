@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Mahesh\'s Blog',
+  title: 'Mahesh\'s Docs',
   // tagline: 'Under Construction',
   favicon: 'img/favicon.ico',
   customFields: {
@@ -53,7 +53,7 @@ const config = {
         },
         blog: {
           blogSidebarCount: 0,
-          routeBasePath: 'blog',
+          routeBasePath: 'docs',
           include: ['**/*.{md,mdx}'],
           editUrl:
             'https://github.com/maheshmnj/docs/tree/main/',
@@ -72,7 +72,7 @@ const config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'Mahesh\'s Blog',
+      title: 'Mahesh\'s Docs',
       logo: {
         // alt: 'My Site Logo',
         src: 'https://maheshjamdade.com/img/profile_pic.jpg',

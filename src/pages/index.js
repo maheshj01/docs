@@ -9,27 +9,27 @@ import BlogList from '../components/Posts';
 
 function HomepageHeader() {
   return (
-    <header className={`${styles.heroBanner}`}>
-      {/* <div className="coverimage">
-        <img src="https://github.com/maheshmnj/blog/assets/31410839/610df08c-44ff-4358-b867-a3d781c4087e" alt="cover" />
-      </div> */}
-      <p style={{
-        fontSize: '1.4rem',
-      }}> Hello there! I'm Mahesh. Welcome to my personal blog. Here, I share my insights and reflections on life, career and code. Everything I have ever written on the web at one place.<br /> Feel free to explore and enjoy!</p>
-      {/* <h2 className={styles.gradient}>Almost ready giving final touch come back soon!</h2> */}
-      <div className={styles.buttons}>
-        <Button
-          onClick={() => {
-            window.open("https://maheshjamdade.com/", "_blank")
-          }}>About Me</Button>
-        <div style={{ width: 20 }}></div>
-        <Button
-          onClick={() => {
-            window.open("https://twitter.com/maheshmnj", "_blank")
-          }}
-          className={styles.button}>Twitter</Button>
+    // Add a docs-only header
+    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+      <div className="container">
+        <h1 className="hero__title">Docs</h1>
+        <p className="hero__subtitle">Under Construction</p>
+        <div className={styles.buttons}>
+          <a
+            className="button button--secondary button--lg"
+            href="./docs/navbar_router">
+            Navbar Router
+          </a>
+          {/* space */}
+          <div style={{ width: '10px', height: '10px' }}></div>
+          <a
+            className="button button--secondary button--lg"
+            href="https://twitter.com/maheshmnj">
+            Twitter
+          </a>
+        </div>
       </div>
-    </header >
+    </header>
   );
 }
 
@@ -42,7 +42,6 @@ export default function Home() {
       title={`${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
-      <BlogList />
     </Layout>
   </>
 }
