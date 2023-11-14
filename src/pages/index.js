@@ -9,30 +9,37 @@ import BlogList from '../components/Posts';
 
 function HomepageHeader() {
   return (
-    // Add a docs-only header
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    < header className={clsx('hero hero--primary', styles.heroBanner)} >
       <div className="container">
-        <h1 className="hero__title">Docs</h1>
-        <p className="hero__subtitle">Under Construction</p>
-        {/* 
-        <div className={styles.buttons}>
-          <a
-            className="button button--secondary button--lg"
-            href="./docs/navbar_router">
-            Navbar Router
-          </a>
-          <div style={{ width: '10px', height: '10px' }}></div>
-          <a
-            className="button button--secondary button--lg"
-            href="https://twitter.com/maheshmnj">
-            Twitter
-          </a>
-        </div>
-         */}
+        <h4 className="hero__title">Packages</h4>
+        <p className="hero__title">Under Construction</p>
       </div>
-    </header>
+    </header >
+
   );
 }
+
+
+// New component for the grid of clickable cards
+const CardGrid = () => {
+  // Replace this with your actual card data
+  const cardData = [
+    { title: 'navbar_router', link: '/docs/navbar_router' },
+    // { title: 'Package 2', link: '/package2' },
+    // Add more cards as needed
+  ];
+
+  return (
+    <div className='bg-purple-100'>
+      {cardData.map((card, index) => (
+        <a key={index} href={card.link} className={styles.card}>
+          <h2>{card.title}</h2>
+        </a>
+      ))}
+    </div>
+  );
+};
+
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
@@ -43,6 +50,9 @@ export default function Home() {
       title={`${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
+      <div className={styles.gradientBackground}>
+        <CardGrid />
+      </div>
     </Layout>
   </>
 }
