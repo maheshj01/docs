@@ -1,25 +1,25 @@
-import React from 'react';
-import clsx from 'clsx';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import React from "react";
+import clsx from "clsx";
+import Layout from "@theme/Layout";
+import Link from "@docusaurus/Link";
 import Navbar from '../components/Navbar';
-import styles from './index.module.css';
-import '../components/Posts/posts.module.css';
-import Layout from '@theme/Layout';
-import BlogList from '../components/Posts';
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import styles from "./index.module.css";
+import HomepageFeatures from "../components/HomepageFeatures";
 
 function HomepageHeader() {
   return (
-    < header className={clsx('hero hero--primary', styles.heroBanner)} >
-      <div className="container">
-        <h4 className="hero__title">Packages</h4>
-        <p className="hero__title">Under Construction</p>
+    <div className="flex-col justify-start m-4">
+      <div className="flex-col">
+        <p className="text-3xl font-bold text-center">Packages</p>
+        <CardGrid />
       </div>
-    </header >
-
+      <div className="">
+        <p className="text-3xl font-bold text-center">Courses</p>
+      </div>
+    </div>
   );
 }
-
-
 // New component for the grid of clickable cards
 const CardGrid = () => {
   // Replace this with your actual card data
@@ -30,12 +30,17 @@ const CardGrid = () => {
   ];
 
   return (
-    <div className='bg-purple-100'>
-      {cardData.map((card, index) => (
-        <a key={index} href={card.link} className={styles.card}>
-          <h2>{card.title}</h2>
-        </a>
-      ))}
+    <div className=''>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 hover:scale-105 duration-1000'>
+        {cardData.map((card, index) => (
+          <div key={index} className='bg-primary rounded-lg shadow-lg'>
+            <Link to={card.link}>
+              <div className='flex h-36 justify-center items-center'>
+                <p className='text-xl font-medium text-gray-900'>{card.title}</p>
+              </div>
+            </Link>
+          </div>))}
+      </div>
     </div>
   );
 };
@@ -50,13 +55,9 @@ export default function Home() {
       title={`${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
-      <div className={styles.gradientBackground}>
-        <CardGrid />
-      </div>
     </Layout>
   </>
 }
-
 
 export function Button(props) {
   return (
