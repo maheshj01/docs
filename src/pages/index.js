@@ -11,11 +11,15 @@ function HomepageHeader() {
   return (
     <div className="flex-col justify-start m-4">
       <div className="flex-col">
-        <p className="text-3xl font-bold text-center">Packages</p>
+        <div className="flex">
+          <p className="text-3xl font-bold text-center">Packages</p>
+        </div>
         <CardGrid />
       </div>
-      <div className="">
-        <p className="text-3xl font-bold text-center">Courses</p>
+      <div className="mt-6">
+        <div className="flex">
+          <p className="text-3xl font-bold text-center">Courses</p>
+        </div>
       </div>
     </div>
   );
