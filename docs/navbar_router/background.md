@@ -1,3 +1,7 @@
+---
+sidebar_position: 9
+---
+
 ### Background
 
 > Curious how the navbar_router was built?
