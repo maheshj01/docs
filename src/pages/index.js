@@ -28,7 +28,7 @@ function HomepageHeader() {
 const CardGrid = () => {
   // Replace this with your actual card data
   const cardData = [
-    { title: 'navbar_router', link: '/open-source/navbar_router' },
+    { title: 'navbar_router', link: '/navbar_router' },
     // { title: 'Package 2', link: '/package2' },
     // Add more cards as needed
   ];
