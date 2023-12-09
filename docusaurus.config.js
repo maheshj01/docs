@@ -59,6 +59,8 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          path: 'open-source',
+          routeBasePath: 'open-source',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
             'https://github.com/maheshmnj/docs/tree/main/'
