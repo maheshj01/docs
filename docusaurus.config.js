@@ -59,8 +59,8 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          path: 'open-source',
-          routeBasePath: 'open-source',
+          path: 'docs',
+          routeBasePath: '/',// skips /docs from the url
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
             'https://github.com/maheshmnj/docs/tree/main/'
@@ -148,6 +148,7 @@ const config = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
+      additionalLanguages: ['dart'],
     },
   },
 };
