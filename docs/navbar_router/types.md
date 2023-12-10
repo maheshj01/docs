@@ -2,6 +2,7 @@
 sidebar_position: 3
 id: types
 title: Navbar Types
+displayed_sidebar: navbarSidebar
 ---
 
 ### Choose between Navbars

@@ -2,6 +2,7 @@
 sidebar_position: 9
 id: background
 title: Background
+displayed_sidebar: navbarSidebar
 ---
 
 ### Background

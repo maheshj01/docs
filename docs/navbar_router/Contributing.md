@@ -2,6 +2,7 @@
 sidebar_position: 11
 id: contributing
 title: Contributing
+displayed_sidebar: navbarSidebar
 ---
 
 # Contributing

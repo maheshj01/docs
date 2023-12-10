@@ -53,6 +53,7 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -92,13 +93,20 @@ const config = {
         src: 'https://maheshjamdade.com/img/profile_pic.jpg',
         href: '/',
       },
-      items: [
-        {
-          href: 'https://github.com/maheshmnj/docs',
-          label: 'GitHub',
-          position: 'right',
-        },
-      ],
+      // items: [
+      //   {
+      //     type: 'docSidebar',  // docSidebar
+      //     position: 'left',
+      //     sidebarId: 'navbar', // foldername
+      //     label: '',     // navbar title
+      //   },
+      //   {
+      //     type: 'docSidebar',  // docSidebar
+      //     position: 'left',
+      //     sidebarId: 'git', // foldername
+      //     label: '',     // navbar title
+      //   },
+      // ],
     },
     footer: {
       style: 'dark',
