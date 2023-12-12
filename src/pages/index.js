@@ -7,6 +7,18 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./index.module.css";
 import HomepageFeatures from "../components/HomepageFeatures";
 
+// Replace this with your actual card data
+const packagesData = [
+  { title: 'navbar_router', link: '/navbar_router' },
+  // { title: 'Package 2', link: '/package2' },
+  // Add more cards as needed
+];
+const coursesData = [
+  { title: 'Git tutorial', link: '/git-tutorial' },
+  // { title: 'Package 2', link: '/package2' },
+  // Add more cards as needed
+];
+
 function HomepageHeader() {
   return (
     <div className="flex-col justify-start m-4">
@@ -14,28 +26,27 @@ function HomepageHeader() {
         <div className="flex">
           <p className="text-3xl font-bold text-center">Packages</p>
         </div>
-        <CardGrid />
+        <CardGrid
+          cardData={packagesData}
+        />
       </div>
       <div className="mt-6">
         <div className="flex">
           <p className="text-3xl font-bold text-center">Courses</p>
         </div>
+        <CardGrid
+          cardData={coursesData}
+        />
       </div>
     </div>
   );
 }
 // New component for the grid of clickable cards
-const CardGrid = () => {
-  // Replace this with your actual card data
-  const cardData = [
-    { title: 'navbar_router', link: '/navbar_router' },
-    // { title: 'Package 2', link: '/package2' },
-    // Add more cards as needed
-  ];
-
+const CardGrid = (props) => {
+  const { cardData } = props;
   return (
     <div className=''>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 hover:scale-105 duration-1000'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 hover:scale-102 duration-1000'>
         {cardData.map((card, index) => (
           <div key={index} className='bg-primary rounded-lg shadow-lg'>
             <Link to={card.link}>

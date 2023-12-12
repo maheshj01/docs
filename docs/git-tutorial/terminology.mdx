@@ -1,0 +1,83 @@
+---
+sidebar_position: 3
+id: terminology
+title: Terminology
+displayed_sidebar: gitSidebar
+---
+
+Now that your environment is well equipped to use the git version control, it's time to put it to use. Whatever project you are working on navigate to the root of that directory inside a terminal or command prompt.
+
+You will often hear terminologies such as **repository**, **commit**, **remote**, **branch**, etc I will explain them going forward as they come along with their usage.
+
+**Repository**: Repository basically refers to the root folder of your project where git is initialized (the location where .git was created), the only difference being it contains an additional folder ` .git ` generally hidden by operating systems to avoid clutter. The `.git` folder is the most important folder, as it contains all version-related information of your repository. This folder is not present by default but is created when you initialize a git repository by running git init.
+
+> At any point in time, if you forget a git command which is normal, just run `git help` and you will have a git manual handy.
+
+A repository can be either a remote repository (not present on your machine) or a local repository (the one on your machine), git is built to work with both you can push your changes to a remote repository stored on code storage platforms like Github, Gitlab, Bitbucket, etc, and keep it in sync with your local repository on your machine. Git is so powerful that it allows you to store your code in multiple remote repositories. We will start with a local repository and gradually move on to see how we can connect our local repository to one of the repositories on GitHub.
+
+### Initializing a git repository
+
+So to convert any folder on your machine into a git repository, you simply need to execute git init from the root of that folder. For instance, for this blog post, I will choose a folder called "Project 2" located on the desktop on my machine. Notice that after initializing Project 2 folder has `.git` folder created. Note that it will be hidden by default and you need to manually unhide to see it, But it is not recommended to ensure you don't actually modify any files in that folder.
+
+Notice that the first line reads "Using master as the name of the initial branch", So it simply indicates that the branch we are presently on is called master.
+
+![](https://cdn-images-1.medium.com/max/1600/1*qCHhrGYyDDt3EV04pa4xWA.png)
+
+So thats brings us another new term "branch"
+
+### what exactly is a branch?
+
+
+branch basically refers to what you would imagine in real life, a branch of a tree. So in the context of git, it refers to a copy of your code on a new branch, where any further changes on the new branch won't affect the code on another branch. Every branch is given a unique name generally master for a repository initialized locally using git. And "main" for a repository created on Github.
+
+![](https://cdn-images-1.medium.com/max/1600/0*v0QQhNzIZLQWxc0J)
+
+You can see the name of your current branch and the available branches by running git branch but this won't work at this time unless you make at least one commit. So there comes another term commit, let's understand that first before we commit to our repository/branch. But you can use git status to see the changes made on your current branch, more about that below.
+
+### commit
+
+A Git commit can be thought of as taking a snapshot of your repository at a specific moment. Think of it as indexing in an array or, to use a tree analogy, imagine a tree with multiple branches. On a particular branch, you have several leaves lined up, and each leaf represents a copy of your code at a specific instance in time. When you make a commit, it's like creating a new leaf on that branch, preserving the snapshot as one of those leaves, allowing you to track and manage changes in your project's history.
+Each commit is associated with a change and is identified by a unique hash SHA-1, commonly known as commit id which is basically a shorthand of the git hash. Whenever we make a change to our code base(basically any file in the repository) we make a commit. You might ask How often should I commit or How large should a commit be? This is kind of subjective you may want to look at some of the answers on this software engineering thread on stackexchange.
+Coming back to our "project 2" I will make some changes let's create a text file and add some content to it.
+Screenshot showing a new file hello.txt and its contentAs you can see a new file hello.txt was added, I ran another command git status, which basically shows the status of your repository. The reason you see all files as red is because they are not being tracked meaning they have not been added to the staging area yet. In order to tell git to keep track of changes of any files in a repository you need to add them to git at least once. 
+Untracked files in simple terms mean the files that are shown in red have been newly created in your repository but are not being tracked by git. So we need to tell git to track it by running
+
+```bash
+git add <file name>
+```
+
+If you want to add all the files in a single go you can run git add .But it is a good practice to add one file at a time going forward after you have made your initial commit.
+Screenshot showing files added to staging area using git addNotice that I added two files hello.txt and matrix.png to the staging area and running git status shows them in green and the rest in red
+Once you have files ready to commit (in green) you need to add an optional message to a commit so that when we look back at a list of commits using git log, we get a gist of the commit by looking at a git message.
+
+Notice a couple of things in the screenshot above when I made a commit it said 14 files changed followed by create mode x14 times, When we commit a file for the first time git interprets it as it was newly created. Also, notice the info associated with each commit, the commit hash in yellow, The name of the author, the date and time of the commit, and the commit message. 
+Now when I do git status it says working tree clean, meaning there are no new changes to commit. And git branch now displays the name of the current branch, had there been multiple branches, they would be listed too.
+
+> **Do you know you can also make an empty commit? But why would you do that?**
+> As far as I know you would do it in instances, when you are project has automated tests set up and you want the CI infrastructure to re-run for whatever reason (may be incase of failure) in such cases you might want to do a empty commit which would trigger the re-running of the tests. 
+> (Forget it if you don't understand thats bit offtopic)
+
+### Staging Area
+
+A staging area, also known as the 'index,' represents the files that are prepared and ready for committing. It is an intermediate step between your working directory and the actual commit. Think of it this way: without a staging area, if you directly committed a file, Git wouldn't know which specific changes you intended to include in the commit, making it necessary to distinguish between changes before creating a snapshot of your project's history.
+
+we don't ever commit a file but the changes in the file.
+
+![](https://cdn-images-1.medium.com/max/1600/1*P4yUxUmeIj_36JbEyLgcxw.png)
+
+I did a few things here I modified hello.txt and replaced the last line with new content, you can see what changes were done by asking git to show the difference in the current working tree from the specified index by running the command
+
+```bash
+git diff <commit id>
+```
+
+### gitignore
+
+### Commands
+
+I have my git notes stored here 
+Stackoverflow answers
+Branching Strategy
+e.g of a large codebase flutter https://github.com/flutter/flutter/wiki/Flutter-build-release-channels
+Summary
+You will only require less than half of the things I shared 90% of the time.
