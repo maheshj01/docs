@@ -5,15 +5,13 @@ title: Routes And Navigation
 displayed_sidebar: navbarSidebar
 ---
 
-### Routes And Navigation
-
 When it comes to routing from a widget which has a Navbar setup it is important to decide whether the Navbar should persist on pushing a new route or not. If the Navbar needs to be hidden then the route should be pushed onto the Flutter's Navigation stack (on top of NavbarRouter). But if we want the Navbar to persist then we should push the route ontop of the existing route (Within NavbarRouter).
 
 NavbarRouter uses this approach by Wrapping each NavbarItem with a [Navigator](https://api.flutter.dev/flutter/widgets/Navigator-class.html) and pushing the route ontop of the existing route.
 
 Consider a rough diagram of a sample app with 3 Navbar items and each item has a nested routes.
 
-![Nested routes example](./assets/nested-routes.png)
+<center>![Nested routes example](./assets/nested-routes.png)</center>
 
 So we need to declare a Map of routes as follows
 
@@ -57,8 +55,9 @@ For instance `HomeFeeds()` is the initial route for the first NavbarItem. if you
 _A helper class `Navigate` is built within NavbarRouter to push routes_
 This class is a wrapper around Flutter's [Navigator](https://api.flutter.dev/flutter/widgets/Navigator-class.html) and provides a simple API to push routes. It also makes possible to add transitions to routes with a enum `TransitionType`.
 
-````dart
 Setting the `isRootNavigator` to `false` will push the route ontop of the existing route (Within NavbarRouter)
+
+````dart
 
 ```dart
  Navigate.pushNamed(context, ProductDetail.route,
@@ -81,3 +80,48 @@ if you want to push a router on top of NavbarRouter you simply need to set the `
 ```
 
 > Note when using named routes with `isRootNavigator: true` you need to specify the route name in the `routes` parameter of `MaterialApp` or `CupertinoApp` widget.
+
+### Push/Pop Routes in the background.
+
+#### Push Routes
+
+NavbarRouter provides flexibility to push route in the background. This is useful when you want to push a route in the background and then navigate to it later. No extra configuration is required you can programmatically push/pop routes in any tab. Here is a sample code from the [example app](https://github.com/maheshmnj/navbar_router/blob/ccaa74124e1a72df53217a39e71b3e1e71dce5eb/example/lib/main.dart#L477)
+
+When you tap on the first item in the list it will push a route in the background and then navigate to it programmatically.
+
+```dart
+      body: ListView.builder(
+          controller: _scrollController,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                  onTap: () {
+                    if (index == 0) {
+                      NavbarNotifier.pushNamed(FeedDetail.route, 0);
+                      NavbarNotifier.showSnackBar(context, 'switching to Home',
+                          onClosed: () {
+                        NavbarNotifier.index = 0;
+                      });
+                    } else {
+                      NavbarNotifier.hideBottomNavBar = false;
+                      Navigate.pushNamed(context, ProductDetail.route,
+                          transitionType: TransitionType.scale,
+                          arguments: {'id': index.toString()});
+                    }
+                  },
+                  child: ProductTile(index: index)),
+            );
+          }),
+    );
+  }
+```
+
+#### Pop Routes
+
+You can also pop a route from any tab you just need to specify the index of the tab. If Navbar is already at the base route (initial route) then it will not pop the route.
+
+```dart
+  NavbarNotifier.popRoute(index);
+```
+
