@@ -14,7 +14,6 @@ flutter pub add navbar_router
 ### Import the package
 
 ```dart
-
 import 'package:flutter/material.dart';
 import 'package:navbar_router/navbar_router.dart';
 ```
@@ -57,16 +56,35 @@ import 'package:navbar_router/navbar_router.dart';
 
 3. Add NavbarRouter Widget to your app
 
-Which requires `List<DestinationRouter> destination` and `List<NavbarItem> destinations` and `Widget Function(BuildContext) errorBuilder` as required parameters. And since we are aiming for large number of routes and destinations, the possibility of error is high. So we need to also specify an `errorBuilder` to gracefully handle an invalid route.
+The widget requires `List<DestinationRouter> destinations`, `List<NavbarItem> destinations` and `Widget Function(BuildContext) errorBuilder` as required parameters. And each DestinationRouter has multiple destinations and is associated with a NavbarItem  And since we are aiming for handling complex nested routes and destinations, the possibility of error is high. So we need to also specify an `errorBuilder` to gracefully handle an invalid route.
 
 ```dart
 NavbarRouter(
-  ...
-  ...
   errorBuilder: (context) {
-    return const Center(child: Text('Error 404 Page Not Found'));
+      return const Center(child: Text('Error 404 Page Not Found'));
   },
-)
+  onBackButtonPressed: (isExiting) {
+    return isExiting;
+  },
+  destinationAnimationCurve: Curves.fastOutSlowIn,
+  destinationAnimationDuration: 600,
+  decoration:
+      NavbarDecoration(navbarType: BottomNavigationBarType.shifting),
+  destinations: [
+    for (int i = 0; i < items.length; i++)
+      DestinationRouter(
+        navbarItem: items[i],
+        destinations: [
+          for (int j = 0; j < _routes[i]!.keys.length; j++)
+            Destination(
+              route: _routes[i]!.keys.elementAt(j),
+              widget: _routes[i]!.values.elementAt(j),
+            ),
+        ],
+        initialRoute: _routes[i]!.keys.first,
+      ),
+  ],
+);
 ```
 
 And that is all with this setup your NavbarRouter should be up and running.
