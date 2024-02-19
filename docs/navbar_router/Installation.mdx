@@ -47,16 +47,30 @@ import 'package:navbar_router/navbar_router.dart';
 
 ```dart
   List<NavbarItem> items = [
-    NavbarItem(Icons.home, 'Home', backgroundColor: colors[0]),
-    NavbarItem(Icons.shopping_bag, 'Products', backgroundColor: colors[1]),
-    NavbarItem(Icons.person, 'Me', backgroundColor: colors[2]),
-    NavbarItem(Icons.settings, 'Settings', backgroundColor: colors[0]),
+    NavbarItem(Icons.home_outlined, 'Home',
+        backgroundColor: mediumPurple,
+        selectedIcon: Icon(
+          Icons.home,
+          size: 26,
+        )),
+    NavbarItem(Icons.shopping_bag_outlined, 'Products',
+        backgroundColor: Colors.orange,
+        selectedIcon: Icon(
+          Icons.shopping_bag,
+          size: 26,
+        )),
+    NavbarItem(Icons.person_outline, 'Me',
+        backgroundColor: Colors.teal,
+        selectedIcon: Icon(
+          Icons.person,
+          size: 26,
+        )),
   ];
 ```
 
 3. Add NavbarRouter Widget to your app
 
-The widget requires `List<DestinationRouter> destinations`, `List<NavbarItem> destinations` and `Widget Function(BuildContext) errorBuilder` as required parameters. And each DestinationRouter has multiple destinations and is associated with a NavbarItem  And since we are aiming for handling complex nested routes and destinations, the possibility of error is high. So we need to also specify an `errorBuilder` to gracefully handle an invalid route.
+The widget requires `List<DestinationRouter> destinations`, `List<NavbarItem> destinations` and `Widget Function(BuildContext) errorBuilder` as required parameters. And each DestinationRouter has multiple destinations and is associated with a NavbarItem And since we are aiming for handling complex nested routes and destinations, the possibility of error is high. So we need to also specify an `errorBuilder` to gracefully handle an invalid route.
 
 ```dart
 NavbarRouter(

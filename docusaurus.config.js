@@ -86,6 +86,14 @@ const config = {
   {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
+    announcementBar:
+    {
+      content:
+        'The Git & Github Guide is still in work, Please check back later.',
+      backgroundColor: '#20232a',
+      textColor: '#fff',
+      isCloseable: false,
+    },
     navbar: {
       title: 'Mahesh\'s Docs',
       logo: {
@@ -114,6 +122,10 @@ const config = {
         {
           title: 'Social',
           items: [
+            {
+              label: 'About',
+              href: 'https://maheshjamdade.com/',
+            },
             {
               label: 'Medium',
               href: 'https://maheshmnj.medium.com/',
