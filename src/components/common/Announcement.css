@@ -1,0 +1,8 @@
+.abar {
+    background-color: rgb(255, 239, 61);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    flex-direction: row;
+}

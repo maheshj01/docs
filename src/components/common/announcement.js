@@ -1,9 +1,10 @@
 import React from "react";
+import "./Announcement.css";
 
 export default function AnnouncementBar(props) {
     return (
-        <div className="bg-blue-500 h-10 text-white p-3 text-center items-">
-            <p>{props.text}</p>
+        <div className="abar text-black">
+            <p className="mt-4">{props.text}</p>
         </div>
     )
 }
