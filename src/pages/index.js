@@ -5,7 +5,8 @@ import Link from "@docusaurus/Link";
 import Navbar from '../components/Navbar';
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./index.module.css";
-import HomepageFeatures from "../components/HomepageFeatures";
+import AnnouncementBar from "../components/common/announcement";
+import { useLocation } from 'react-router-dom';
 
 function HomepageHeader() {
   const cardData = [
@@ -63,7 +64,12 @@ export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   const allPosts = siteConfig.customFields.allPosts;
   console.log("allPosts", allPosts.length);
+  const location = useLocation();
+  const currentRouteName = location.pathname;
   return <>
+    {/* {currentRouteName === '/git-tutorial' && ( */}
+    <AnnouncementBar text="The Git & Github Guide is still in work, Please check back later." />
+    {/* )} */}
     <Layout
       title={`${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">

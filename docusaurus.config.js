@@ -86,14 +86,14 @@ const config = {
   {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
-    announcementBar:
-    {
-      content:
-        'The Git & Github Guide is still in work, Please check back later.',
-      backgroundColor: '#20232a',
-      textColor: '#fff',
-      isCloseable: false,
-    },
+    // announcementBar:
+    // {
+    //   content:
+    //     'The Git & Github Guide is still in work, Please check back later.',
+    //   backgroundColor: '#20232a',
+    //   textColor: '#fff',
+    //   isCloseable: false,
+    // },
     navbar: {
       title: 'Mahesh\'s Docs',
       logo: {
