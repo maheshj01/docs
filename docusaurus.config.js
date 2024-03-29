@@ -148,6 +148,10 @@ const config = {
               href: 'https://stackoverflow.com/users/8253662/mahesh-jamdade',
             },
             {
+              label: 'Blog',
+              href: 'https://blog.maheshjamdade.com/',
+            },
+            {
               label: 'GitHub',
               href: 'https://github.com/maheshmnj',
             },

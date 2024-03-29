@@ -1,0 +1,108 @@
+---
+sidebar_position: 4
+id: git-commands
+title: Commands
+displayed_sidebar: gitSidebar
+---
+
+This section of the guide covers all of the commands discussed so far at a glance to quickly reference them. If you need detailed information on any of the commands, you should refer to the respective sections in the guide.
+
+### Configuration
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "
+```
+
+### Repository Initialization
+
+```bash
+git init
+```
+
+### Cloning a Repository
+
+```bash
+git clone <repository-url>
+```
+
+### Staging Changes
+
+```bash
+git add <file-name> # stage a specific file
+git add . # stage all files
+```
+
+### Committing Changes
+
+```bash
+git commit -m "Commit message"
+```
+
+### Viewing Changes
+
+```bash
+git status # view the status of the repository
+git diff # view changes in the working directory
+```
+
+### Branching
+
+```bash
+git branch # list all branches and highlight the current branch
+git branch <branch-name> # create a new branch
+git checkout <branch-name> # switch to a branch
+git checkout -b <branch-name> # create and switch to a new branch
+git checkout - # switch to the last branch
+git merge <branch-name> # merge a branch into the current branch
+git branch -d <branch-name> # delete a branch (use -D to force delete)
+```
+
+### Remote Repository
+
+```bash
+git remote add origin <repository-url> # add a remote repository
+git remote -v # view remote repositories
+git push -u origin master # push changes to a remote repository
+git pull origin master # pull changes from a remote repository
+git remote delete origin # remove a remote repository
+```
+
+In the above commands "origin" is referred to as the remote repository. You can name it anything you want. It is a convention to name it "origin. you can view the remote URL of the repository using the following command:
+
+```bash
+git remote -v
+```
+
+It will show you the remote URL of the repository along with the name of the remote repository.
+
+```bash
+mahesh@Maheshs-MacBook-Air-M1-3 docs % git remote -v
+origin  https://github.com/maheshmnj/docs.git (fetch)
+origin  https://github.com/maheshmnj/docs.git (push)
+```
+
+### Tagging
+
+```bash
+git tag # list all tags
+git tag -a <tag-name> -m "Tag message" # create an annotated tag
+git push origin <tag-name> # push a tag to a remote repository
+git push origin --tags # push all tags to a remote repository
+```
+
+### Stashing
+
+```bash
+git stash # stash changes
+git stash list # list all stashes
+git stash show # show the latest stash
+git stash pop # apply and drop the latest stash
+git stash apply # apply the latest stash
+git stash apply stash@{n} # apply a specific stash
+git stash drop # drop the latest stash
+git stash drop stash@{n} # drop a specific stash
+```
+
+
+when you clone a repository remote will be set by default to the URL you cloned from.

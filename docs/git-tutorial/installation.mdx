@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 id: installation
 title: Installation
 displayed_sidebar: gitSidebar
@@ -47,6 +47,12 @@ You can see the name of your current branch and the available branches by runnin
 #### commit
 
 A Git commit can be thought of as taking a snapshot of your repository at a specific moment. Think of it as indexing in an array or, to use a tree analogy, imagine a tree with multiple branches. On a particular branch, you have several leaves lined up, and each leaf represents a copy of your code at a specific instance in time. When you make a commit, it's like creating a new leaf on that branch, preserving the snapshot as one of those leaves, allowing you to track and manage changes in your project's history.
+
+ A ----> B ----> C ----> D ----> E
+
+Consider the above diagram, where A, B, C, D, and E represent commits. Each commit is a snapshot of your project at a specific point in time. When you make a commit, you are essentially creating a new snapshot of your project, which is then added to the commit history.
+
+You can view the commit history of your project by running the command `git log` which will show you a list of all the commits made in the repository.
 
 Each commit is associated with a change and is identified by a unique hash SHA-1, commonly known as **commit id** which is basically a shorthand of the git hash. Whenever we make a change to our code base(basically any file in the repository) we make a commit. You might ask How often should I commit or How large should a commit be? This is kind of subjective you may want to look at some of the answers on this [software engineering thread on stackexchange](https://softwareengineering.stackexchange.com/questions/74764/how-often-should-i-do-you-make-commits).
 Coming back to our "project 2" I will make some changes let's create a text file and add some content to it.
@@ -99,12 +105,31 @@ I did a few things here I modified hello.txt and replaced the last line with new
 git diff <commit id>
 ```
 
+if you don't specify the commit id it will show the difference between the working tree and the staging area. You can also see the difference between the staging area and the last commit by running `git diff --staged` or `git diff --cached` both are the same.
+
 #### gitignore
+
+
 
 #### Commands
 
 I have my git notes stored here 
 Stackoverflow answers
+
+
+1. Checkout: This command is used to switch between branches. You can use it to switch to a new branch or an existing branch.
+
+```
+git checkout <branch name>
+```
+
+If you would like to create a new branch and switch to it in a single command you can use the -b flag
+
+```
+git checkout -b <branch name>
+```
+
+
 
 #### Branching Strategy
 

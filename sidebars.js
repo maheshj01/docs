@@ -52,8 +52,10 @@ export default {
     ],
   gitSidebar: [
     'git-tutorial/git-intro',
+    `git-tutorial/what-is-git`,
     'git-tutorial/installation',
     `git-tutorial/course_structure`,
+    `git-tutorial/git-commands`,
   ],
 };
 
