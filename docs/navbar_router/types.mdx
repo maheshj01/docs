@@ -5,6 +5,8 @@ title: Navbar Types
 displayed_sidebar: navbarSidebar
 ---
 
+import Properties from "../../src/components/common/Properties";
+
 ### Choose between Navbars
 
 NavbarRouter supports three types of Navbar as of today `standard` which is basically material design 2 BottomNavigationBar (default for this package) and `notched` a customized NavigationBar with a notch and a material3 Navbar. User can choose to use either of them by setting the `type` property of the `NavbarRouter` widget to either `NavbarType.standard`, `NavbarType.notched`, `NavbarType.material3` or `NavbarType.floating`.
@@ -30,7 +32,14 @@ The height of each Navbar can be accessed through the constants `kM3NavbarHeight
 
 ### Decorating the Navbar
 
+NavbarDecoration is a base decoration class for all the Navbar types. It provides a way to customize the Navbar, Each of the Decoration corressponds to the respective Navbar type.
+
 - `NavbarDecoration` for Standard Navbar
 - `NotchedDecoration` for Notched Navbar
 - `M3NavbarDecoration` for Material3 Navbar
 - `FloatingNavbarDecoration` for Floating Navbar
+
+  BottomNavigationBarType navbarType: The type of the Navbar to be displayed
+  [BottomNavigationBarType.fixed] or [BottomNavigationBarType.shifting]
+
+<Properties />
