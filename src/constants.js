@@ -33,6 +33,16 @@ export const decorationProperties = {
         'typeKey': 'double',
         'description': 'The elevation shadown on the edges of bottomnavigationbar',
     },
+    'minWidth': {
+        'type': 'double?',
+        'typeKey': 'double',
+        'description': 'The smallest possible width for the navbar when `NavbarRouter.isDesktop` is true, this width is regardless of the navbar\'s icon or label size.The default is 72.',
+    },
+    'minExtendedWidth': {
+        'type': 'double?',
+        'typeKey': 'double',
+        'description': 'Width when `isExtended` is True, The default value is 256.',
+    },
     'unselectedIconColor': {
         'type': 'Color?',
         'typeKey': 'Color',
