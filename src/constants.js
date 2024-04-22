@@ -56,7 +56,7 @@ export const decorationProperties = {
     'showUnselectedLabels': {
         'type': 'bool',
         'typeKey': 'bool',
-        'description': 'Whether or not to show the unselected label text',
+        'description': 'Whether or not to show the unselected label text, When in DesktopMode, either isExtended is False or showUnselectedLabels is True',
     },
     'unselectedLabelColor': {
         'type': 'Color?',
