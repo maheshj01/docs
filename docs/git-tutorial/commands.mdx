@@ -105,3 +105,34 @@ git stash drop stash@{n} # drop a specific stash
 ```
 
 when you clone a repository remote will be set by default to the URL you cloned from.
+
+### Checkout a Pull Request
+
+Although most of the answers on this thread work, I prefer to fetch a  pull request in a new branch and do a soft reset to an old commit (moves the PR changes to the staging area), this allows me to test the PR changes as well as see the difference in my IDE.
+
+```
+git fetch origin pull/<PR-id>/head:<BRANCH_NAME>
+git checkout BRANCH_NAME
+```
+and then do a soft reset to a old commit (see list of commits using `git log`)
+
+```
+git reset --soft <hash_of_old_commit>
+```
+
+e.g 
+
+```shell
+git fetch origin pull/65/head:test-branch 
+git checkout test-branch
+git log # press 'q' to exit
+git reset --soft 7d7fe166cd878ed70c559c4e98faf2323532
+```
+
+Running the above command will pull the changes of the PR and show them in your IDE version and they won't be committed and you can see the difference in your staging area (as if those changes were made locally.)
+
+
+Ref: [Github docs reference][1]
+
+
+  [1]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/checking-out-pull-requests-locally
