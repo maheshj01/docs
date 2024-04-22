@@ -6,6 +6,7 @@ displayed_sidebar: navbarSidebar
 ---
 
 import Properties from "../../src/components/common/Properties";
+import { decorationProperties } from "../../src/constants";
 
 ### Choose between Navbars
 
@@ -42,4 +43,4 @@ NavbarDecoration is a base decoration class for all the Navbar types. It provide
   BottomNavigationBarType navbarType: The type of the Navbar to be displayed
   [BottomNavigationBarType.fixed] or [BottomNavigationBarType.shifting]
 
-<Properties />
+  <Properties properties={decorationProperties} />

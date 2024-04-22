@@ -124,3 +124,72 @@ export const decorationProperties = {
         'description': '',
     },
 }
+
+export const navbarProperties = {
+    "backButtonBehavior": {
+        "type": "BackButtonBehavior",
+        "typeKey": "BackButtonBehavior",
+        "description": "An enum which decides, How the back button is handled, defaults to`BackButtonBehavior.rememberHistory`."
+    },
+    "destinations": {
+        "type": "List<NavbarItem>",
+        "typeKey": "NavbarItem",
+        "description": "A List of `DestinationRouter` to show when the user taps the[NavbarItem]. Each DestinationRouter specifies a List of Destinations, initialRoute, and the navbarItem corresponding to that destination."
+    },
+
+    "type": {
+        "type": "NavbarType",
+        "typeKey": "NavbarType",
+        "description": "The type of NavigationBar to be passed to NavbarRouter defaults to`NavbarType.standard`.This allows you to choose between the default `NavbarType.standard` and`NavbarType.notched`."
+    },
+    "decoration": {
+        "type": "NavbarDecoration",
+        "typeKey": "NavbarDecoration",
+        "description": "The decoraton for Navbar has all the properties you would expect in a[BottomNavigationBar] to adjust the style of the Navbar.See[NavbarDecoration](./ types / #decorating - the - navbar) for more details."
+    },
+    "destinationAnimationCurve": {
+        "type": "Curve",
+        "typeKey": "Curve",
+        "description": "Curve for the destination animation when the user taps a navbar item.Defaults to`Curves.fastOutSlowIn`."
+    },
+    "destinationAnimationDuration": {
+        "type": "Duration",
+        "typeKey": "Duration",
+        "description": " The duration in milliseconds of the animation of the destination.Defaults to 700ms."
+    },
+    "errorBuilder": {
+        "type": "Widget Function(BuildContext context, Object error)",
+        "typeKey": "Widget",
+        "description": "A WidgetBuilder to show the user when the user tried to navigate to a route that does not exist in the[destinations]."
+    },
+    "initialIndex": {
+        "type": "int",
+        "typeKey": "int",
+        "description": " Navbar item that is initially selected, defaults to the first item in the list of[NavbarItems]"
+    },
+    "isDesktop": {
+        "type": "bool",
+        "typeKey": "bool",
+        "description": "if true, navbar will be shown on the left, this property can be used along with `NavbarDecoration.isExtended` to make the navbar adaptable for large screen sizes."
+    },
+    "onBackButtonPressed": {
+        "type": "void Function()",
+        "typeKey": "void",
+        "description": "A function which defines whether it is the root Navigator or not.if the method returns true then the Navigator is at the base of the navigator stack"
+    },
+    "onChanged": {
+        "type": "void Function(int index)",
+        "typeKey": "void",
+        "description": "A callback that is called when the currentIndex of the navbarchanges."
+    },
+    "shouldPopToBaseRoute": {
+        "type": "bool Function()",
+        "typeKey": "bool",
+        "description": "A boolean which decides, whether the navbar should pop to the base route(pop all except first) when the current navbar is tapped while the route is deeply nested.This feature is similar to Instagram's navigation bar defaults to true."
+    },
+    "onCurrentTabClicked": {
+        "type": "void Function()",
+        "typeKey": "void",
+        "description": "A callback that is called when the selected navbar is tapped again. (This allows you to handle useCases like scroll to top when the navbar is tapped again or Pop to the base route similar to Instagram.)"
+    }
+}
