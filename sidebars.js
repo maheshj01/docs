@@ -51,11 +51,11 @@ export default {
       "navbar_router/release-notes",
     ],
   gitSidebar: [
-    'git-tutorial/git-intro',
+    `git-tutorial/overview`,
+    'git-tutorial/introduction',
     `git-tutorial/course_structure`,
     'git-tutorial/installation',
     'git-tutorial/git-basics',
-    `git-tutorial/what-is-git`,
     `git-tutorial/git-commands`,
   ],
 };

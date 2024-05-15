@@ -1,0 +1,23 @@
+---
+sidebar_position: 2
+id: introduction
+title: Introduction
+displayed_sidebar: gitSidebar
+---
+
+### What the heck is git?
+
+[from Wikipedia](https://en.wikipedia.org/wiki/Git)
+
+> Git is a distributed version control system that tracks changes in any set of computer files, usually used for coordinating work among programmers who are collaboratively developing source code during software development. Its goals include speed, data integrity, and support for distributed, non-linear workflows.
+
+It is a version control tool that helps you access different versions of a file at any point in time. Git comes with built-in GUI tools (git-gui, gitk), but there are several [third-party tools](https://git-scm.com/downloads/guis) for users looking for a platform-specific experience. If you are only a beginner, I would recommend using git from the command line before using any of the GUI tools at this time, until you understand the basics of git. There are different types of version control tools such as git, stash, source code, etc and git is the most popular used. Git was developed by the Legendary [Linus Torvalds](https://github.com/torvalds?tab=overview&from=2023-11-01&to=2023-11-04), the same guy who created Linux.
+
+### Centralized Version Control
+
+Git is a distributed version control system, which means that the entire codebase and its history are available on every developer's computer. This is in contrast to centralized version control systems, where the codebase and its history are stored on a central server, and developers must connect to the server to access the codebase and its history.
+To give you an example, if you have ever used SVN, CVS, or Perforce, these are centralized version control systems. In these systems, developers must connect to a central server to access the codebase and its history. This can lead to problems if the central server goes down or if developers are working in different locations and cannot connect to the central server. In a centralized version control system, developers can only commit changes to the central server, which can lead to conflicts if multiple developers are working on the same codebase at the same time.
+
+### Distributed Version Control
+
+In a distributed version control system like Git, each developer has a complete copy of the codebase and its history on their computer. This means that developers can work on the codebase and commit changes to their local repository without needing to be connected to a central server. Developers can also share changes with other developers by pushing and pulling changes between repositories. This makes it easier for developers to work in different locations and collaborate on the same codebase. It also makes it easier to recover from data loss, as each developer has a complete copy of the codebase and its history on their computer.
