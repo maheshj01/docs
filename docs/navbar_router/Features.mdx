@@ -105,10 +105,54 @@ NavbarRouter supports 4 different types of Navbars as of today and intends to ad
         />
         <Caption caption="NavbarType.floating" />
       </div>
+
   </div>
 </center>
 
 For more details on usage and properties, see [Types of Navbar](./types) for more details.
+
+### Animated Navbar Badges
+
+Starting v0.7.4 NavbarRouter adds support for Animated Badges, To show a badge on the navbar passing the navbarBadge property to the NavbarItem.
+
+[](../assets/badges.gif)
+
+<center>![Snackbar Demo](./assets/badges.gif)</center>
+
+```dart
+NavbarItem(
+  Icons.home_outlined, 'Home',
+  backgroundColor: colors[0],
+  selectedIcon: const Icon(
+    Icons.home,
+    size: 26,
+  ),
+  // add badge to the navbar
+  badge: const NavbarBadge(
+    badgeText: "11",
+    showBadge: true,
+  )),
+```
+
+And then you can show or hide the badge in the run time using the below method
+
+```dart
+NavbarNotifier.makeBadgeVisible(index, true)
+```
+
+and update the badge properties using the following method
+
+```dart
+NavbarNotifier.updateBadge(
+  index, // index of the navbar item to update
+  NavbarBadge(
+    badgeText: "11",
+    ...
+  ),
+)
+```
+
+Just like other apis of navbar_router, these methods can be invoked during runtime from any part of the widget tree.
 
 ### Fade Between Navbar Destinations
 

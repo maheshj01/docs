@@ -39,6 +39,7 @@ export default {
     [
       "navbar_router/introduction",
       "navbar_router/installation",
+      "navbar_router/release-notes",
       "navbar_router/features",
       "navbar_router/types",
       "navbar_router/navbarnotifier",
@@ -48,12 +49,11 @@ export default {
       "navbar_router/background",
       "navbar_router/properties",
       "navbar_router/contributing",
-      "navbar_router/release-notes",
     ],
   gitSidebar: [
     `git-tutorial/overview`,
-    'git-tutorial/introduction',
     `git-tutorial/course_structure`,
+    'git-tutorial/introduction',
     'git-tutorial/installation',
     'git-tutorial/git-basics',
     `git-tutorial/git-commands`,
