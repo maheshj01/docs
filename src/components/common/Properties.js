@@ -33,7 +33,7 @@ export function TypeComponent(props) {
                 <h4 className='text-lg font-sans m-0'>{props.name}</h4>
                 <a href={`${flutterClass[props.typeKey]}`} className='text-blue-600 text-lg' target='_blank'>{props.type}</a>
             </div>
-            <p className='text-gray-700'>{props.description}</p>
+            <p>{props.description}</p>
         </div>
     );
 }
