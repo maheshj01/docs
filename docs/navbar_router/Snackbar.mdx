@@ -19,6 +19,8 @@ Snackbar is a component that is used to display a message for a short period of 
 
 Showing Snackbar with NavbarRouter is very easy. You just need to use the `showSnackbar` method of the `NavbarRouter`. The `showSnackbar` method requires a context and a message.
 
+> Note: You will need to wrap your `NavbarRouter` within a builder, if the parent of NavbarRouter does not contain a Scaffold, see the [example](https://github.com/maheshmnj/navbar_router/blob/c150aa4e53e9ad354d2954c9df7b50172039cf1c/example/lib/main.dart#L242-#L245) for more details.
+
 ```dart
 NavbarNotifier.showSnackBar(
   context,
