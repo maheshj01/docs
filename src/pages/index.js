@@ -7,10 +7,12 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./index.module.css";
 import AnnouncementBar from "../components/common/announcement";
 import { useLocation } from 'react-router-dom';
+import ThemeContextProvider from '@theme/Layout/Provider'
 
 function HomepageHeader() {
   const cardData = [
     { title: 'navbar_router', link: '/navbar_router' },
+    { title: 'searchfield', link: 'https://pub.dev/packages/searchfield' },
     // { title: 'Package 2', link: '/package2' },
     // Add more cards as needed
   ];
@@ -60,7 +62,7 @@ const CardGrid = ({ data }) => {
 };
 
 
-export default function Home() {
+export default function Home(props) {
   const { siteConfig } = useDocusaurusContext();
   const allPosts = siteConfig.customFields.allPosts;
   console.log("allPosts", allPosts.length);
@@ -68,13 +70,20 @@ export default function Home() {
   const currentRouteName = location.pathname;
   return <>
     {/* {currentRouteName === '/git-tutorial' && ( */}
-    <AnnouncementBar text="The Git & Github Guide is still in work, Please check back later." />
-    {/* )} */}
-    <Layout
+    <ThemeContextProvider>
+      <AnnouncementBar text="The Git & Github Guide is still in work, Please check back later." />
+      <Layout>
+        {/* <Navbar
+          title={props.title}
+        /> */}
+        {/* )} */}
+        <HomepageHeader />
+      </Layout>
+    </ThemeContextProvider>
+    {/* <Layout
       title={`${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
-    </Layout>
+    </Layout> */}
   </>
 }
 
