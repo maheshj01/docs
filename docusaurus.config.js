@@ -28,7 +28,7 @@ const config = {
   baseUrl: '/',
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'maheshmnj', // Usually your GitHub org/user name.
+  organizationName: 'maheshj01', // Usually your GitHub org/user name.
   projectName: 'docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -64,14 +64,14 @@ const config = {
           routeBasePath: '/',// skips /docs from the url
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/maheshmnj/docs/tree/main/'
+            'https://github.com/maheshj01/docs/tree/main/'
         },
         blog: {
           blogSidebarCount: 0,
           routeBasePath: 'docs',
           include: ['**/*.{md,mdx}'],
           editUrl:
-            'https://github.com/maheshmnj/docs/tree/main/',
+            'https://github.com/maheshj01/docs/tree/main/',
           feedOptions: {
             type: 'json',
           }
@@ -128,15 +128,15 @@ const config = {
             },
             {
               label: 'Medium',
-              href: 'https://maheshmnj.medium.com/',
+              href: 'https://maheshj01.medium.com/',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/maheshmnj',
+              href: 'https://twitter.com/maheshj01',
             },
             {
               label: 'Threads',
-              href: 'https://threads.net/@maheshmnj',
+              href: 'https://threads.net/@maheshj01',
             },
           ],
         },
@@ -153,7 +153,7 @@ const config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/maheshmnj',
+              href: 'https://github.com/maheshj01',
             },
           ],
         },

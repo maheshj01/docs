@@ -23,11 +23,11 @@ Thanks for taking you time to contribute to this repo. Before you start contribu
 
 ### Contributing
 
-Before you actually start contributing, We highly recommend you to check if there is an issue already created for the same.If there is an issue, please comment and let us know that you are interested to work on it, This will help to avoid duplicate work. If there is no issue, please create one and tag [@maheshmnj](https://github.com/maheshmnj) so that we could discuss the bug or a feature request to ensure we are on the same page.
+Before you actually start contributing, We highly recommend you to check if there is an issue already created for the same.If there is an issue, please comment and let us know that you are interested to work on it, This will help to avoid duplicate work. If there is no issue, please create one and tag [@maheshj01](https://github.com/maheshj01) so that we could discuss the bug or a feature request to ensure we are on the same page.
 
 Now that you are clear about the bug and ready to contribute
 
-1. Fork [this repo](https://github.com/maheshmnj/navbar_router/).
+1. Fork [this repo](https://github.com/maheshj01/navbar_router/).
 2. Create a new branch.
 3. Commit a fix.
 4. Add appropriate tests(recommended).
